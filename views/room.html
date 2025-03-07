@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt phòng</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../assets/vendor/lightgallery.js/src/css/lightgallery.css"/>
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/fonts.css" rel="stylesheet">
+    <link href="../assets/css/views_style.css" rel="stylesheet">
+
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- lightgallery -->
+    <script type="module" src="../assets/vendor/lightgallery.js/src/js/lightgallery.js"></script>
+    <!-- lightgallery plugins -->
+    <script type="module" src="../assets/vendor/lightgallery.js/src/js/lg-autoplay.min.js"></script>
+    <script type="module" src="../assets/vendor/lightgallery.js/src/js/lg-share.min.js"></script>
+    <script type="module" src="../assets/vendor/lightgallery.js/src/js/lg-zoom.min.js"></script>
+    <script type="module" src="../assets/vendor/lightgallery.js/src/js/lg-fullscreen.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&amp;family=Lora:ital,wght@0,400..700;1,400..700&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Nunito:ital,wght@0,200..1000;1,200..1000&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap');
+        *{
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- ======= Property Search Section ======= -->
+<div class="click-closed"></div>
+<!--/ Form Search Star /-->
+<div class="box-collapse">
+    <div class="title-box-d">
+        <h3 class="title-d">Tìm kiếm phòng</h3>
+    </div>
+    <span class="close-box-collapse right-boxed bi bi-x"></span>
+    <div class="box-collapse-wrap form">
+        <form class="form-a" action="#" method="get">
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <div class="form-group">
+                        <label class="pb-2" for="Type">Từ khóa</label>
+                        <input type="text" name="key"
+                            class="form-control form-control-lg form-control-a"
+                            placeholder="Keyword">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="Type">Loại phòng</label>
+                        <select name="slt" class="form-control form-select form-control-a" id="Type">
+                            <option value="" selected>Tất cả</option>
+                            <option value="1">Standard</option><option value="2">Superior</option><option value="3">Deluxe</option><option value="4">Suite</option><option value="5">Villa</option>                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="city">Địa điểm</label>
+                        <select name="sla" class="form-control form-select form-control-a" id="city">
+                            <option value="" selected>Tất cả</option>
+                            <option value="Cát Bà">Cát Bà</option>
+                            <option value="Nha Trang">Nha Trang</option>
+                            <option value="Hạ Long">Hạ Long</option>
+                            <option value="Đà Lạt">Đà Lạt</option>
+                            <option value="Đà Nẵng">Đà nẵng</option>
+                            <option value="Vũng Tàu">Vũng Tàu</option>
+                            <option value="Thanh Hóa">Thanh Hóa</option>
+                            <option value="Cần Thơ">Cần Thơ</option>
+                            <option value="Hồ Chí Minh">Tp.Hồ Chí Minh</option>
+                            <option value="Hà Nội">Hà Nội</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="price">Giá cao nhất</label>
+                        <select name="slp" class="form-control form-select form-control-a" id="price">
+                            <option value="" selected>Không giới hạn</option>
+                            <option value="20">$20</option>
+                            <option value="50">$50</option>
+                            <option value="100">$100</option>
+                            <option value="150">$150</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="price-sort">Sắp sếp</label>
+                        <select name="sort" class="form-control form-select form-control-a" id="price-sort">
+                            <option value="" selected>Mới nhất</option>
+                            <option value="pricet">Giá thấp đến cao</option>
+                            <option value="priceg">Giá cao đến thấp</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-3">
+                    <button type="submit" class="btn btn-b">Tìm kiếm</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div><!-- End Property Search Section -->    <!-- ======= Header/Navbar ======= -->
+    <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+        <div class="container">
+            <button class="navbar-toggler collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarDefault"
+                aria-controls="navbarDefault"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a class="navbar-brand text-brand" href=""><span class="color-b">Hostay</span></a>
+
+            <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link "
+                        href="#">Trang chủ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link "
+                        href="#">Giới thiệu</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active"
+                        href="#">Đặt phòng</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link "
+                            href="#">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button type="button"
+            class="btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01">
+                <i class="bi bi-search"></i>
+            </button>
+
+                        <div class="dropdown ms-3">
+
+                <a class="d-flex align-items-center pe-0 avatar-profile"
+                href="#"
+                data-bs-toggle="dropdown">
+                    <img src="../public/images/user-profile.jpg" alt="Profile" class="rounded-circle avatar-profile-img">
+                </a><!-- End Profile Iamge Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end profile">
+                    <li class="dropdown-header">
+                    <h6>Trần Quang Nghĩa</h6>
+                    <span>admin</span>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <i class="bi bi-person"></i>
+                            <span class="ms-1">Thông tin cá nhân</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <i class="bi bi-clock-history"></i>
+                            <span class="ms-1">Lịch sử đặt phòng</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                                            <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-gear"></i>
+                                <span class="ms-1">Đến trang quản trị</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                    
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <i class="bi bi-question-circle"></i>
+                            <span class="ms-1">Cần giúp đỡ?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="#">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span class="ms-1">Đăng xuất</span>
+                        </a>
+                    </li>
+
+                </ul><!-- End Profile Dropdown Items -->
+            </div><!-- End Profile Nav -->
+                        
+        </div>
+    </nav>
+    <!-- End Header/Navbar --><div aria-live="polite"
+    aria-atomic="true"
+    class="position-relative">
+  <div class="toast-container top-0 end-0 p-3">
+
+    <div class="toast toastErr"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true">
+        <div class="toast-header">
+            <div class="rounded-circle me-2 p-2 bg-danger"></div>
+            <strong class="me-auto text-danger">Error</strong>
+            <button type="button"
+                class="btn-close"
+                data-bs-dismiss="toast"
+                aria-label="Close"></button>
+        </div>
+        <div class="toast-body text-danger">
+                </div>
+    </div>
+
+    <div class="toast toastSuc"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true">
+        <div class="toast-header">
+            <div class="rounded-circle me-2 p-2 bg-success"></div>
+            <strong class="me-auto text-success">Success</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body text-success">
+                </div>
+    </div>
+  </div>
+</div>
+<script>
+const toastErr = document.querySelector('.toastErr');
+const toastErrShow = new bootstrap.Toast(toastErr);
+const toastSuc = document.querySelector('.toastSuc');
+const toastSucShow = new bootstrap.Toast(toastSuc);
+        </script><main id="main">
+
+  <!-- ======= Intro Single ======= -->
+  <section class="intro-single">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-8">
+          <div class="title-single-box">
+            <h1 class="title-single">Liberty Sapa Hotel</h1>
+            <span class="color-text-a">69 Muong Hoa, Sapa Town, Lao Cai, Sa Pa, Việt Nam</span>
+          </div>
+        </div>
+        <div class="col-md-12 col-lg-4">
+          <nav aria-label="breadcrumb" class="breadcrumb-box d-flex justify-content-lg-end">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="#">Trang chủ</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="#">Đặt phòng</a>
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Intro Single-->
+
+  <!-- ======= Property Single ======= -->
+  <section class="property-single nav-arrow-b">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 mb-5">
+          <img src="../public/images/1703331931_74529.jpg" alt="" class="img-fluid">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+
+          <div class="row justify-content-between">
+            <div class="col-md-5 col-lg-4">
+              <div class="property-price d-flex justify-content-center foo">
+                <div class="card-header-c d-flex">
+                  <div class="card-box-ico">
+                    <span class="bi bi-cash">$</span>
+                  </div>
+                  <div class="card-title-c align-self-center">
+                    <h5 class="title-c">22.82</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="property-summary">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="title-box-d section-t4">
+                      <h3 class="title-d">Tóm tắt</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="summary-list">
+                  <ul class="list">
+                    <li class="d-flex">
+                      <strong class="me-2">ID:</strong>
+                      <span>45</span>
+                    </li>
+                    <li class="d-flex">
+                      <strong class="me-2">Địa chỉ:</strong>
+                      <span>69 Muong Hoa, Sapa Town, Lao Cai, Sa Pa, Việt Nam</span>
+                    </li>
+                    <li class="d-flex">
+                      <strong class="me-2">Loại:</strong>
+                      <span>Standard</span>
+                    </li>
+                    <li class="d-flex">
+                      <strong class="me-2">Loại giường ngủ:</strong>
+                      <span>Giường đôi nhỏ</span>
+                    </li>
+                    <li class="d-flex">
+                      <strong class="me-2">Trạng thái:</strong>
+                      <span class="text-success">Còn phòng trống</span>                    </li>
+                    <li class="d-flex">
+                      <strong class="me-2">Diện tích:</strong>
+                      <span>25m<sup>2</sup></span>
+                    </li>
+                    <li class="d-flex">
+                      <strong class="me-2">Giường ngủ:</strong>
+                      <span>2</span>
+                    </li>
+                    <li class="d-flex">
+                      <strong class="me-2">Đánh giá:</strong>
+                      <span>3<i class="bi bi-star-fill text-warning ms-1"></i></span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-7 col-lg-7 section-md-t3">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="title-box-d">
+                    <h3 class="title-d">Mô tả</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="property-description">
+                <p class="description color-text-a">
+                  Tọa lạc tại thị xã Sa Pa, cách Ga cáp treo Fansipan Legend 6 km, Liberty Sapa Hotel cung cấp chỗ nghỉ với khu vườn, chỗ đỗ xe riêng miễn phí, sảnh khách chung và sân hiên. Khách sạn 3 sao này có nhà hàng và phòng nghỉ gắn máy điều hòa với WiFi miễn phí cùng phòng tắm riêng. Chỗ nghỉ cung cấp dịch vụ phòng, dịch vụ lễ tân 24 giờ và dịch vụ thu đổi ngoại tệ cho khách.
+</br></br>
+Tất cả phòng nghỉ tại khách sạn đều có TV truyền hình cáp màn hình phẳng, ấm đun nước, vòi xịt/chậu rửa vệ sinh, đồ vệ sinh cá nhân miễn phí và bàn làm việc. Các phòng được trang bị ga trải giường và khăn tắm.
+</br></br>
+Các điểm tham quan nổi tiếng gần Liberty Sapa Hotel bao gồm Hồ Sa Pa, Nhà thờ Đá Sa Pa và Bến xe Sa Pa. Sân bay gần nhất là sân bay Wenshan Puzhehei, cách đó 222 km, và chỗ nghỉ cung cấp dịch vụ đưa đón sân bay với một khoản phụ phí.                </p>
+              </div>
+              <div class="row section-t3">
+                <div class="col-sm-12">
+                  <div class="title-box-d">
+                    <h3 class="title-d">Tiện nghi</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="amenities-list color-text-a">
+                <ul class="list-a no-margin">
+                  <li>Wifi miễn phí</li>
+                  <li>Chỗ để xe miễn phí</li>
+                  <li>Dịch vụ phòng</li>
+                  <li>Điều hòa không khí</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-10 offset-md-1">
+          <ul class="nav nav-pills-a nav-pills mb-3 section-t3" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active"
+                id="pills-map-tab"
+                data-bs-toggle="pill"
+                href="#pills-map"
+                role="tab"
+                aria-controls="pills-map"
+                aria-selected="false">
+                <i class="bi bi-geo-alt me-1"></i>
+                Bản đồ
+              </a>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane show active" id="pills-map" role="tabpanel" aria-labelledby="pills-map-tab">
+              <iframe
+                src="https://maps.google.com/maps?q=69%20Muong%20Hoa,%20Sapa%20Town,%20Lao%20Cai,%20Sa%20Pa,%20Vi%c3%aa%cc%a3t%20Nam&amp;output=embed"
+                width="100%"
+                height="460"
+                loading="lazy"
+                allowfullscreen
+                title="69 Muong Hoa, Sapa Town, Lao Cai, Sa Pa, Việt Nam">
+              </iframe>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="row section-t3">
+            <div class="col-sm-12">
+              <div class="title-box-d">
+                <h3 class="title-d">Đăng ký đặt phòng</h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="property-contact">
+                <form class="form-a needs-validation" method="post" action="#" novalidate>
+                  <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="txtFullname" class="form-label">Họ và tên</label>
+                      <input type="text"
+                        class="form-control form-control-lg form-control-a"
+                        id="txtFullname"
+                        name="txtFullname"
+                        placeholder="Họ và tên"
+                        required>
+                      <div class="invalid-feedback">Vui lòng nhập đầy đủ họ tên</div>
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="txtName" class="form-label">Email</label>
+                      <input type="email"
+                        class="form-control form-control-lg form-control-a"
+                        id="txtEmail"
+                        name="txtEmail"
+                        placeholder="Email"
+                        required>
+                      <div class="invalid-feedback">Vui lòng nhập email</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="txtPhone" class="form-label">Số điện thoại</label>
+                      <input type="text"
+                        class="form-control form-control-lg form-control-a"
+                        id="txtPhone"
+                        name="txtPhone"
+                        placeholder="Số điện thoại"
+                        required>
+                      <div class="invalid-feedback">Vui lòng nhập số điện thoại</div>
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="txtNumberRoom" class="form-label">Số lượng phòng</label>
+                      <input type="number"
+                        class="form-control form-control-lg form-control-a"
+                        id="txtNumberRoom"
+                        name="txtNumberRoom"
+                        min="1"
+                        max="5"
+                        value="1"
+                        placeholder="Số lượng phòng"
+                        required>
+                      <div class="invalid-feedback">Vui lòng nhập số phòng</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="txtNumberAdult" class="form-label">Số lượng người lớn</label>
+                      <input type="number"
+                        class="form-control form-control-lg form-control-a"
+                        id="txtNumberAdult"
+                        name="txtNumberAdult"
+                        min="0"
+                        max="10"
+                        value="1"
+                        placeholder="Số lượng người lớn"
+                        required>
+                      <div class="invalid-feedback">Vui lòng nhập số người lớn</div>
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="txtNumberChildren" class="form-label">Số lượng trẻ nhỏ</label>
+                      <input type="number"
+                        class="form-control form-control-lg form-control-a"
+                        id="txtNumberChildren"
+                        name="txtNumberChildren"
+                        min="0"
+                        max="10"
+                        value="0"
+                        placeholder="Số lượng trẻ nhỏ"
+                        required>
+                      <div class="invalid-feedback">Vui lòng nhập số trẻ nhỏ</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="txtStartDate" class="form-label">Ngày bắt đầu</label>
+                      <input type="date"
+                        class="form-control form-control-lg form-control-a"
+                        id="txtStartDate"
+                        name="txtStartDate"
+                        placeholder="Ngày bắt đầu"
+                        value="2025-03-07"
+                        required>
+                      <div class="invalid-feedback">Vui lòng nhập ngày bắt đầu</div>
+                    </div>
+                    <div class="form-group col-md-6 mb-3">
+                      <label for="txtEndDate" class="form-label">Ngày kết thúc</label>
+                      <input type="date"
+                        class="form-control form-control-lg form-control-a"
+                        id="txtEndDate"
+                        name="txtEndDate"
+                        placeholder="Ngày kết thúc"
+                        value="2025-03-07"
+                        required>
+                      <div class="invalid-feedback">Vui lòng nhập ngày kết thúc</div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="form-group">
+                      <label for="txtFullname" class="form-label">Ghi chú</label>
+                      <textarea id="textMessage"
+                        class="form-control"
+                        placeholder="Ghi chú"
+                        name="txtNotes"
+                        cols="45"
+                        rows="8"></textarea>
+                    </div>
+                  </div>
+                  <input type="hidden" name="idForPost" value="45">
+                  <div class="row mt-3 d-flex justify-content-center">
+                    <div class="col-lg-3">
+                      <button type="submit" class="btn btn-a"><i class="bi bi-send me-1"></i>Đặt phòng</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Property Single-->
+
+</main><!-- End #main -->
+<!-- ======= Footer ======= -->
+    <section class="section-footer">
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <div class="widget-a">
+            <div class="w-header-a">
+                <h3 class="w-title-a text-brand">Hostay</h3>
+            </div>
+            <div class="w-body-a">
+                <p class="w-text-a color-text-a">
+                Hostay kỳ vọng trở thành nền tảng du lịch nghỉ dưỡng số 1 cho khách
+                hàng Đông Nam Á trong 5 năm tới.
+                </p>
+            </div>
+            <div class="w-footer-a">
+                <ul class="list-unstyled">
+                <li class="color-a">
+                    <span class="color-text-a">Phone .</span> 0366461704
+                </li>
+                <li class="color-a">
+                    <span class="color-text-a">Email .</span> hostayhotelgroup@gmail.com
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+            <div class="widget-a">
+            <div class="w-header-a">
+                <h3 class="w-title-a text-brand">Chỉ Mục</h3>
+            </div>
+            <div class="w-body-a">
+                <div class="w-body-a">
+                <ul class="list-unstyled">
+                    <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#uu-dai">Ưu đãi</a>
+                    </li>
+                    <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#moi-nhat">Mới nhất</a>
+                    </li>
+                    <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#dia-diem">Địa điểm phổ biến</a>
+                    </li>
+                    <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#danh-gia">Đánh giá</a>
+                    </li>
+                    <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#albums">Albums</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+            <div class="widget-a">
+            <div class="w-header-a">
+                <h3 class="w-title-a text-brand">Menu</h3>
+            </div>
+            <div class="w-body-a">
+                <ul class="list-unstyled">
+                <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Trang chủ</a>
+                </li>
+                <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Giới thiệu</a>
+                </li>
+                <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Đặt phòng</a>
+                </li>
+                <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Liên hệ</a>
+                </li>
+                                    <li class="item-list-a">
+                        <i class="bi bi-chevron-right"></i> <a href="#">Thông tin cá nhân</a>
+                    </li>
+                                </ul>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+    <footer>
+    <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+            <nav class="nav-footer">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                <a href="#">Trang chủ</a>
+                </li>
+                <li class="list-inline-item">
+                <a href="#">Giới thiệu</a>
+                </li>
+                <li class="list-inline-item">
+                <a href="#">Đặt phòng</a>
+                </li>
+                <li class="list-inline-item">
+                <a href="#">Liên hệ</a>
+                </li>
+            </ul>
+            </nav>
+            <div class="socials-a">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                <a href="#">
+                    <i class="bi bi-facebook" aria-hidden="true"></i>
+                </a>
+                </li>
+                <li class="list-inline-item">
+                <a href="#">
+                    <i class="bi bi-twitter" aria-hidden="true"></i>
+                </a>
+                </li>
+                <li class="list-inline-item">
+                <a href="#">
+                    <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+                </li>
+                <li class="list-inline-item">
+                <a href="#">
+                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+    </footer><!-- End  Footer -->
+
+    <div id="preloader"></div>
+    <a href="#"
+        class="back-to-top d-flex align-items-center justify-content-center">
+            <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../assets/js/views_main.js"></script>
+    <script src="../assets/js/validation.js"></script>
+</body>
+</html>
