@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin cá nhân</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../assets/vendor/lightgallery.js/src/css/lightgallery.css"/>
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/fonts.css" rel="stylesheet">
+    <link href="../assets/css/views_style.css" rel="stylesheet">
+
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- lightgallery -->
+    <script type="module" src="../assets/vendor/lightgallery.js/src/js/lightgallery.js"></script>
+    <!-- lightgallery plugins -->
+    <script type="module" src="../assets/vendor/lightgallery.js/src/js/lg-autoplay.min.js"></script>
+    <script type="module" src="../assets/vendor/lightgallery.js/src/js/lg-share.min.js"></script>
+    <script type="module" src="../assets/vendor/lightgallery.js/src/js/lg-zoom.min.js"></script>
+    <script type="module" src="../assets/vendor/lightgallery.js/src/js/lg-fullscreen.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&amp;family=Lora:ital,wght@0,400..700;1,400..700&amp;family=Montserrat:ital,wght@0,100..900;1,100..900&amp;family=Nunito:ital,wght@0,200..1000;1,200..1000&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap');
+        *{
+            font-family: "Nunito", sans-serif;
+            font-optical-sizing: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- ======= Property Search Section ======= -->
+<div class="click-closed"></div>
+<!--/ Form Search Star /-->
+<div class="box-collapse">
+    <div class="title-box-d">
+        <h3 class="title-d">Tìm kiếm phòng</h3>
+    </div>
+    <span class="close-box-collapse right-boxed bi bi-x"></span>
+    <div class="box-collapse-wrap form">
+        <form class="form-a" action="https://hostay.newstyle.id.vn/hostay/views/rooms.php" method="get">
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <div class="form-group">
+                        <label class="pb-2" for="Type">Từ khóa</label>
+                        <input type="text" name="key"
+                            class="form-control form-control-lg form-control-a"
+                            placeholder="Keyword">
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="Type">Loại phòng</label>
+                        <select name="slt" class="form-control form-select form-control-a" id="Type">
+                            <option value="" selected>Tất cả</option>
+                            <option value="1">Standard</option><option value="2">Superior</option><option value="3">Deluxe</option><option value="4">Suite</option><option value="5">Villa</option>                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="city">Địa điểm</label>
+                        <select name="sla" class="form-control form-select form-control-a" id="city">
+                            <option value="" selected>Tất cả</option>
+                            <option value="Cát Bà">Cát Bà</option>
+                            <option value="Nha Trang">Nha Trang</option>
+                            <option value="Hạ Long">Hạ Long</option>
+                            <option value="Đà Lạt">Đà Lạt</option>
+                            <option value="Đà Nẵng">Đà nẵng</option>
+                            <option value="Vũng Tàu">Vũng Tàu</option>
+                            <option value="Thanh Hóa">Thanh Hóa</option>
+                            <option value="Cần Thơ">Cần Thơ</option>
+                            <option value="Hồ Chí Minh">Tp.Hồ Chí Minh</option>
+                            <option value="Hà Nội">Hà Nội</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="price">Giá cao nhất</label>
+                        <select name="slp" class="form-control form-select form-control-a" id="price">
+                            <option value="" selected>Không giới hạn</option>
+                            <option value="20">$20</option>
+                            <option value="50">$50</option>
+                            <option value="100">$100</option>
+                            <option value="150">$150</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-2">
+                    <div class="form-group mt-3">
+                        <label class="pb-2" for="price-sort">Sắp sếp</label>
+                        <select name="sort" class="form-control form-select form-control-a" id="price-sort">
+                            <option value="" selected>Mới nhất</option>
+                            <option value="pricet">Giá thấp đến cao</option>
+                            <option value="priceg">Giá cao đến thấp</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-12 mt-3">
+                    <button type="submit" class="btn btn-b">Tìm kiếm</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div><!-- End Property Search Section -->    <!-- ======= Header/Navbar ======= -->
+    <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
+        <div class="container">
+            <button class="navbar-toggler collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarDefault"
+                aria-controls="navbarDefault"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <a class="navbar-brand text-brand" href="https://hostay.newstyle.id.vn/hostay/"><span class="color-b">Hostay</span></a>
+
+            <div class="navbar-collapse collapse justify-content-center" id="navbarDefault">
+                <ul class="navbar-nav">
+
+                    <li class="nav-item">
+                        <a class="nav-link "
+                        href="index.html">Trang chủ</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link "
+                        href="about.html">Giới thiệu</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link "
+                        href="rooms.html">Đặt phòng</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link "
+                            href="contact.html">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button type="button"
+            class="btn btn-b-n navbar-toggle-box navbar-toggle-box-collapse"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01">
+                <i class="bi bi-search"></i>
+            </button>
+
+                        <div class="dropdown ms-3">
+
+                <a class="d-flex align-items-center pe-0 avatar-profile"
+                href="profiles.html"
+                data-bs-toggle="dropdown">
+                    <img src="../public/user-profile.jpg" alt="Profile" class="rounded-circle avatar-profile-img">
+                </a><!-- End Profile Iamge Icon -->
+
+                <ul class="dropdown-menu dropdown-menu-end profile">
+                    <li class="dropdown-header">
+                    <h6>Trần Quang Nghĩa</h6>
+                    <span>admin</span>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="profiles.html">
+                            <i class="bi bi-person"></i>
+                            <span class="ms-1">Thông tin cá nhân</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="histories.html">
+                            <i class="bi bi-clock-history"></i>
+                            <span class="ms-1">Lịch sử đặt phòng</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                                            <li>
+                            <a class="dropdown-item d-flex align-items-center" href="https://hostay.newstyle.id.vn/hostay/admin">
+                                <i class="bi bi-gear"></i>
+                                <span class="ms-1">Đến trang quản trị</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                    
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="contact.html">
+                            <i class="bi bi-question-circle"></i>
+                            <span class="ms-1">Cần giúp đỡ?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item d-flex align-items-center" href="https://hostay.newstyle.id.vn/hostay/logout.php">
+                            <i class="bi bi-box-arrow-right"></i>
+                            <span class="ms-1">Đăng xuất</span>
+                        </a>
+                    </li>
+
+                </ul><!-- End Profile Dropdown Items -->
+            </div><!-- End Profile Nav -->
+                        
+        </div>
+    </nav>
+    <!-- End Header/Navbar --><div aria-live="polite"
+    aria-atomic="true"
+    class="position-relative">
+  <div class="toast-container top-0 end-0 p-3">
+
+    <div class="toast toastErr"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true">
+        <div class="toast-header">
+            <div class="rounded-circle me-2 p-2 bg-danger"></div>
+            <strong class="me-auto text-danger">Error</strong>
+            <button type="button"
+                class="btn-close"
+                data-bs-dismiss="toast"
+                aria-label="Close"></button>
+        </div>
+        <div class="toast-body text-danger">
+                </div>
+    </div>
+
+    <div class="toast toastSuc"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true">
+        <div class="toast-header">
+            <div class="rounded-circle me-2 p-2 bg-success"></div>
+            <strong class="me-auto text-success">Success</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body text-success">
+                </div>
+    </div>
+  </div>
+</div>
+<script>
+const toastErr = document.querySelector('.toastErr');
+const toastErrShow = new bootstrap.Toast(toastErr);
+const toastSuc = document.querySelector('.toastSuc');
+const toastSucShow = new bootstrap.Toast(toastSuc);
+        </script><main class="main">
+    <div class="intro-single">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+
+                    <div class="card">
+                    <div class="card-body pt-3">
+                        <!-- Bordered Tabs -->
+                        <ul class="nav nav-tabs nav-tabs-bordered">
+
+                        <li class="nav-item">
+                            <button class="nav-link active"
+                                data-bs-toggle="tab"
+                                data-bs-target="#profile-overview">Tổng quan</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link"
+                                data-bs-toggle="tab"
+                                data-bs-target="#profile-edit">Chỉnh sửa</button>
+                        </li>
+
+                        <li class="nav-item">
+                            <button class="nav-link"
+                                data-bs-toggle="tab"
+                                data-bs-target="#profile-change-password">Đổi mật khẩu</button>
+                        </li>
+
+                        </ul>
+                        <div class="tab-content pt-2">
+
+                        <div class="tab-pane fade show active profile-overview" id="profile-overview">
+
+                            <h5 class="card-title">Chi tiết</h5>
+
+                            <div class="row mt-3">
+                            <div class="col-lg-2 col-md-3 fw-bold label ">Họ tên</div>
+                            <div class="col-lg-10 col-md-9">Trần Quang Nghĩa</div>
+                            </div>
+
+                            <div class="row mt-3">
+                            <div class="col-lg-2 col-md-3 fw-bold label">Tên đăng nhập</div>
+                            <div class="col-lg-10 col-md-9">admin</div>
+                            </div>
+
+                            <div class="row mt-3">
+                            <div class="col-lg-2 col-md-3 fw-bold label">Số điện thoại</div>
+                            <div class="col-lg-10 col-md-9">0366461704</div>
+                            </div>
+
+                            <div class="row mt-3">
+                            <div class="col-lg-2 col-md-3 fw-bold label">Email</div>
+                            <div class="col-lg-10 col-md-9">nghiadaica@gmail.com</div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-lg-2 col-md-3 fw-bold label">Vị trí</div>
+                                <div class="col-lg-10 col-md-9">
+                                    Quản trị cấp cao                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                            <!-- Profile Edit Form -->
+                            <form action="#"
+                                method="post"
+                                class="needs-validation" novalidate>
+
+                                <div class="row mb-3">
+                                    <label for="fullName" class="col-md-3 col-lg-2 col-form-label">Tên đầy đủ</label>
+                                    <div class="col-md-9 col-lg-10">
+                                        <input name="txtFullname"
+                                            type="text"
+                                            class="form-control"
+                                            id="fullName"
+                                            value="Trần Quang Nghĩa"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="emailInput" class="col-md-3 col-lg-2 col-form-label">Email</label>
+                                    <div class="col-md-9 col-lg-10">
+                                        <input name="txtEmail"
+                                            type="text"
+                                            class="form-control"
+                                            id="emailInput"
+                                            value="nghiadaica@gmail.com"
+                                            required>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-3">
+                                    <label for="Phone" class="col-md-3 col-lg-2 col-form-label">Số điện thoại</label>
+                                    <div class="col-md-9 col-lg-10">
+                                        <input name="txtPhone"
+                                            type="text"
+                                            class="form-control"
+                                            id="Phone" value="0366461704">
+                                    </div>
+                                </div>
+
+                                <input type="hidden" name="idForPost" value="15">
+
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary" name="edit">Lưu thay đổi</button>
+                                </div>
+                            </form><!-- End Profile Edit Form -->
+
+                        </div>
+
+                        <div class="tab-pane fade pt-3" id="profile-change-password">
+                            <!-- Change Password Form -->
+                            <form action="#"
+                                method="post"
+                                class="needs-validation"
+                                novalidate>
+
+                            <div class="row mb-3">
+                                <label for="currentPassword"
+                                    class="col-md-3 col-lg-2 col-form-label">
+                                        Mật khẩu hiện tại
+                                </label>
+                                <div class="col-md-9 col-lg-10">
+                                <input name="txtPass"
+                                    type="password"
+                                    class="form-control"
+                                    id="currentPassword"
+                                    placeholder="••••••••"
+                                    required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="newPassword" class="col-md-3 col-lg-2 col-form-label">
+                                    Mật khẩu mới
+                                </label>
+                                <div class="col-md-9 col-lg-10">
+                                <input name="txtPass1"
+                                    type="password"
+                                    class="form-control"
+                                    id="newPassword"
+                                    placeholder="At least 8 character"
+                                    required>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="renewPassword" class="col-md-3 col-lg-2 col-form-label">
+                                    Nhập lại mật khẩu mới
+                                </label>
+                                <div class="col-md-9 col-lg-10">
+                                <input name="txtPass2"
+                                    type="password"
+                                    class="form-control"
+                                    id="renewPassword"
+                                    placeholder="At least 8 character"
+                                    required>
+                                </div>
+                            </div>
+
+                            <input type="hidden" name="idForPost" value="15">
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+                            </div>
+                            </form><!-- End Change Password Form -->
+
+                        </div>
+
+                        </div><!-- End Bordered Tabs -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- ======= Footer ======= -->
+    <section class="section-footer">
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <div class="widget-a">
+            <div class="w-header-a">
+                <h3 class="w-title-a text-brand">Hostay</h3>
+            </div>
+            <div class="w-body-a">
+                <p class="w-text-a color-text-a">
+                Hostay kỳ vọng trở thành nền tảng du lịch nghỉ dưỡng số 1 cho khách
+                hàng Đông Nam Á trong 5 năm tới.
+                </p>
+            </div>
+            <div class="w-footer-a">
+                <ul class="list-unstyled">
+                <li class="color-a">
+                    <span class="color-text-a">Phone .</span> 0366461704
+                </li>
+                <li class="color-a">
+                    <span class="color-text-a">Email .</span> hostayhotelgroup@gmail.com
+                </li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+            <div class="widget-a">
+            <div class="w-header-a">
+                <h3 class="w-title-a text-brand">Chỉ Mục</h3>
+            </div>
+            <div class="w-body-a">
+                <div class="w-body-a">
+                <ul class="list-unstyled">
+                    <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#uu-dai">Ưu đãi</a>
+                    </li>
+                    <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#moi-nhat">Mới nhất</a>
+                    </li>
+                    <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#dia-diem">Địa điểm phổ biến</a>
+                    </li>
+                    <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#danh-gia">Đánh giá</a>
+                    </li>
+                    <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#albums">Albums</a>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4 section-md-t3">
+            <div class="widget-a">
+            <div class="w-header-a">
+                <h3 class="w-title-a text-brand">Menu</h3>
+            </div>
+            <div class="w-body-a">
+                <ul class="list-unstyled">
+                <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="#">Trang chủ</a>
+                </li>
+                <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="about.html">Giới thiệu</a>
+                </li>
+                <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="rooms.html">Đặt phòng</a>
+                </li>
+                <li class="item-list-a">
+                    <i class="bi bi-chevron-right"></i> <a href="contact.html">Liên hệ</a>
+                </li>
+                                    <li class="item-list-a">
+                        <i class="bi bi-chevron-right"></i> <a href="profiles.html">Thông tin cá nhân</a>
+                    </li>
+                                </ul>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+    <footer>
+    <div class="container">
+        <div class="row">
+        <div class="col-md-12">
+            <nav class="nav-footer">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                <a href="#">Trang chủ</a>
+                </li>
+                <li class="list-inline-item">
+                <a href="about.html">Giới thiệu</a>
+                </li>
+                <li class="list-inline-item">
+                <a href="rooms.html">Đặt phòng</a>
+                </li>
+                <li class="list-inline-item">
+                <a href="contact.html">Liên hệ</a>
+                </li>
+            </ul>
+            </nav>
+            <div class="socials-a">
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                <a href="#">
+                    <i class="bi bi-facebook" aria-hidden="true"></i>
+                </a>
+                </li>
+                <li class="list-inline-item">
+                <a href="#">
+                    <i class="bi bi-twitter" aria-hidden="true"></i>
+                </a>
+                </li>
+                <li class="list-inline-item">
+                <a href="#">
+                    <i class="bi bi-instagram" aria-hidden="true"></i>
+                </a>
+                </li>
+                <li class="list-inline-item">
+                <a href="#">
+                    <i class="bi bi-linkedin" aria-hidden="true"></i>
+                </a>
+                </li>
+            </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+    </footer><!-- End  Footer -->
+
+    <div id="preloader"></div>
+    <a href="#"
+        class="back-to-top d-flex align-items-center justify-content-center">
+            <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Vendor JS Files -->
+    <script src="../assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="../assets/js/views_main.js"></script>
+    <script src="../assets/js/validation.js"></script>
+</body>
+
+
+</html>
