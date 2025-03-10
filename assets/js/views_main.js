@@ -202,4 +202,31 @@
       clickable: true,
     },
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("✅ LightGallery đã load!", window.lgModules);
+
+    if (typeof lightGallery === "function") {
+      const gallery = document.getElementById("lightgallery");
+
+      if (window.lgModules && Object.keys(window.lgModules).length > 0) {
+        lightGallery(gallery, {
+          plugins: [
+            window.lgModules.zoom,
+            window.lgModules.thumbnail,
+            window.lgModules.fullscreen,
+            window.lgModules.autoplay,
+            window.lgModules.share,
+            window.lgModules.download,
+          ],
+          speed: 500,
+        });
+        console.log("✅ LightGallery đã được khởi tạo!");
+      } else {
+        console.error("⚠️ Lỗi: Plugins chưa được load!");
+      }
+    } else {
+      console.error("⚠️ Lỗi: lightGallery chưa được định nghĩa!");
+    }
+  });
 })();
